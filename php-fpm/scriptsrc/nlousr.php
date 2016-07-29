@@ -49,12 +49,18 @@ This software is provided WITHOUT any SUPPORT or WARRANTY but bug reports and fe
 */
 ?>
 <?php
+/*.
+    require_module 'standard';
+    require_module 'ldap';
+.*/
+?>
+<?php
 $debugenable = false;
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 ?>
 
 <?php
-function htmldebugprint($stringtoprint,$printenable)
+function htmldebugprint(string $stringtoprint, bool $printenable)
 {
   if($printenable)
   {
@@ -62,7 +68,7 @@ function htmldebugprint($stringtoprint,$printenable)
   }
 }
 
-function htmldebugprint_r($arraytoprint,$printenable)
+function htmldebugprint_r(array $arraytoprint, bool $printenable)
 {
   if($printenable)
   {
@@ -84,9 +90,6 @@ function mslogintimestamptodatecellformated($mstimestamp)
       print "<th> never logged in </th>";
     }
 }
-
-
-
 
 ?>
 
